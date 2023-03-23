@@ -1,7 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express()
+const bodyParser = require("body-parser")
 require('dotenv/config')
+
+app.use(bodyParser.json())
+const postsRoute = require('./routes/posts')
+app.use('/posts', postsRoute)
 
 // ROUTES
 app.get('/',(req,res)=> {
