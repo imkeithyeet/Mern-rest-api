@@ -17,6 +17,7 @@ app.get('/posts',(req,res)=> {
     res.send('We are on home')
 })
 
+
 // Connect to DB
 mongoose.connect(process.env.DB_CONNECTION)
   .then(() => {
